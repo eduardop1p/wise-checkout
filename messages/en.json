@@ -20,7 +20,9 @@
         "label": "Security code",
         "error": "Mandatory field"
       },
-      "bntSubmit": "Pay"
+      "bntSubmit": "Pay",
+      "msgSuccess": "We are processing your payment, please wait",
+      "msgError": "An error occurred, please try again"
     }
   },
   "loading": {

@@ -1,0 +1,31 @@
+{
+  "home": {
+    "title": "Pague com um novo cartão",
+    "subTitle": "Aceitamos Visa, Mastercard e Maestro",
+    "formCreditCard": {
+      "inputCardName": {
+        "label": "Nome no cartão",
+        "error": "Campo obrigatório"
+      },
+      "inputCardNumber": {
+        "label": "Número do cartão",
+        "error": "Número de cartão inválido"
+      },
+      "subTitle": "Guarde este cartão para pagamentos futuros",
+      "inputCardValidity": {
+        "label": "Data de validade",
+        "error": "Campo obrigatório"
+      },
+      "inputCardCVV": {
+        "label": "Código de segurança",
+        "error": "Campo obrigatório"
+      },
+      "bntSubmit": "Pagar",
+      "msgSuccess": "Estamos a processar o seu pagamento, aguarde",
+      "msgError": "Ocorreu um erro, tente novamente"
+    }
+  },
+  "loading": {
+    "title": "Ambiente seguro"
+  }
+}

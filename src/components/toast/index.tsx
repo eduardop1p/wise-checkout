@@ -25,7 +25,7 @@ export default function Toast() {
       open={toast.open}
       autoHideDuration={6000}
       onClose={handleClose}
-      anchorOrigin={{ horizontal: 'center', vertical: 'bottom' }}
+      anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
     >
       <Alert
         onClose={handleClose}
