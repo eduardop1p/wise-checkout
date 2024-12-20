@@ -67,7 +67,10 @@ export default function FormCreditCard() {
           className={`${isLoading ? 'pointer-events-none' : 'pointer-events-auto'} bg-80e142 hover:bg-9fe870 hover:scale-105 text-0e0f0c font-semibold text-base w-full h-12 flex items-center justify-center text-center rounded-[30px] transition-all duration-300`}
         >
           {isLoading ? (
-            <CircularProgress size={25} className='text-0e0f0c' />
+            <CircularProgress
+              size={25}
+              className='!text-0e0f0c !stroke-0e0f0c !fill-0e0f0c'
+            />
           ) : (
             translations('home.formCreditCard.bntSubmit')
           )}
