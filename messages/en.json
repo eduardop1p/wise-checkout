@@ -1,0 +1,29 @@
+{
+  "home": {
+    "title": "Pay with a new card",
+    "subTitle": "We accept Visa, Mastercard and Maestro",
+    "formCreditCard": {
+      "inputCardName": {
+        "label": "Name on card",
+        "error": "Mandatory field"
+      },
+      "inputCardNumber": {
+        "label": "Card number",
+        "error": "Invalid card number"
+      },
+      "subTitle": "Save this card for future payments",
+      "inputCardValidity": {
+        "label": "Expiration date",
+        "error": "Mandatory field"
+      },
+      "inputCardCVV": {
+        "label": "Security code",
+        "error": "Mandatory field"
+      },
+      "bntSubmit": "Pay"
+    }
+  },
+  "loading": {
+    "title": "Safe environment"
+  }
+}
