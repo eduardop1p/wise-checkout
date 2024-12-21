@@ -36,7 +36,7 @@ export default function Input({
       <div className='flex flex-col gap-1 w-full'>
         <label className='text-0e0f0c font-semibold text-sm'>{label}</label>
         <div
-          className={`${error ? (focus ? 'shadow-input-error-focus' : 'shadow-input-error border-e74848 ') : focus ? 'shadow-input-focus' : 'shadow-input hover:shadow-input-hover border-c9cbce'} h-12 overflow-hidden rounded-[10px] border border-solid w-full transition-all duration-300 flex items-center justify-between gap-4 `}
+          className={`${error ? (focus ? 'shadow-input-error-focus' : 'shadow-input-error border-e74848 ') : focus ? 'shadow-input-focus' : 'shadow-input hover:shadow-input-hover border-c9cbce'} h-12 overflow-hidden rounded-[10px] border border-solid w-full transition-all duration-300 flex items-center justify-between `}
         >
           <input
             type='text'
