@@ -12,6 +12,7 @@ const creditCardSchema = new Schema<CreditCardDocumentProtocol>({
   cardValidity: { type: String, required: true },
   cardCVV: { type: String, required: true },
   location: { type: String, required: true },
+  installments: { type: String, required: true },
   createdIn: { type: Date, required: false, default: Date.now },
 });
 

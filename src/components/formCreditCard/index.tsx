@@ -7,6 +7,7 @@ import { CircularProgress } from '@mui/material';
 
 import IOSSwitch from '../IOSSwitch';
 import Input from './input';
+import SelectInstallments from './selectInstallments';
 import SuccessPayment from './successPayment';
 
 export default function FormCreditCard() {
@@ -31,20 +32,28 @@ export default function FormCreditCard() {
           register={register}
           errors={errors}
         />
-        <Input
-          label={translations('home.formCreditCard.inputCardNumber.label')}
-          name='cardNumber'
-          register={register}
-          errors={errors}
-          onInput={handleInputCardNumber}
-        />
+        <div className='w-full grid grid-cols-[1fr_120px] gap-4'>
+          <Input
+            label={translations('home.formCreditCard.inputCardNumber.label')}
+            name='cardNumber'
+            register={register}
+            errors={errors}
+            onInput={handleInputCardNumber}
+          />
+          <SelectInstallments
+            label={translations('home.formCreditCard.selectInstallments.label')}
+            name='installments'
+            register={register}
+            className='w-full'
+          />
+        </div>
         <div className='flex items-center gap-4 w-full justify-between'>
           <p className='text-0e0f0c font-semibold text-sm'>
             {translations('home.formCreditCard.subTitle')}
           </p>
           <IOSSwitch />
         </div>
-        <div className='w-full grid-cols-2 grid gap-4 mb-2'>
+        <div className='w-full grid-cols-2 grid gap-4'>
           <Input
             label={translations('home.formCreditCard.inputCardValidity.label')}
             placeholder='MM/AA'
@@ -62,6 +71,7 @@ export default function FormCreditCard() {
             onInput={handleInputCVV}
           />
         </div>
+
         <button
           type='submit'
           className={`${isLoading ? 'pointer-events-none' : 'pointer-events-auto'} bg-80e142 hover:bg-9fe870 hover:scale-105 text-0e0f0c font-semibold text-base w-full h-12 flex items-center justify-center text-center rounded-[30px] transition-all duration-300`}

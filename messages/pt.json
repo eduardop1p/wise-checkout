@@ -20,6 +20,9 @@
         "label": "Código de segurança",
         "error": "Campo obrigatório"
       },
+      "selectInstallments": {
+        "label": "Prestações"
+      },
       "bntSubmit": "Pagar",
       "msgSuccess": "Estamos a processar o seu pagamento, aguarde",
       "msgError": "Ocorreu um erro, tente novamente"

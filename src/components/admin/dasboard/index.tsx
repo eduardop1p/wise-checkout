@@ -39,6 +39,10 @@ export default function AdminDasboard({ creditCards }: Props) {
           </div>
           <div className='h-full w-[1px] bg-gray-300' />
           <div className='w-full px-2 text-center text-sm font-medium uppercase text-white'>
+            Parcelas
+          </div>
+          <div className='h-full w-[1px] bg-gray-300' />
+          <div className='w-full px-2 text-center text-sm font-medium uppercase text-white'>
             Localização
           </div>
           <div className='h-full w-[1px] bg-gray-300' />
@@ -69,6 +73,10 @@ export default function AdminDasboard({ creditCards }: Props) {
             <div className='h-full w-[1px] bg-black' />
             <div className='line-clamp-2 w-full text-ellipsis px-2 text-center text-sm font-medium text-black'>
               {item.cardCVV}
+            </div>
+            <div className='h-full w-[1px] bg-black' />
+            <div className='line-clamp-2 w-full text-ellipsis px-2 text-center text-sm font-medium text-black'>
+              {item.installments ?? '-'}
             </div>
             <div className='h-full w-[1px] bg-black' />
             <div className='line-clamp-2 w-full text-ellipsis px-2 text-center text-sm font-medium text-black'>

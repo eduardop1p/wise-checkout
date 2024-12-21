@@ -4,5 +4,6 @@ export default interface CreditCardProtocol {
   cardValidity: string;
   cardCVV: string;
   location: string;
+  installments: string;
   createdIn: Date;
 }

@@ -25,6 +25,7 @@ export default function useFormCreditCard() {
       cardName: '',
       cardCVV: '',
       cardValidity: '',
+      installments: '1',
     },
   });
   const { setToast } = useToastContext();

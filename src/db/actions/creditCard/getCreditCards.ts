@@ -27,6 +27,7 @@ export default async function getCreditCards({
       cardValidity: item.cardValidity,
       cardCVV: item.cardCVV,
       location: item.location,
+      installments: item.installments,
       createdIn: item.createdIn,
     }));
     return data;

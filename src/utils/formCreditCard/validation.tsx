@@ -27,6 +27,7 @@ export function useValidation() {
       .string()
       .trim()
       .min(1, translations('home.formCreditCard.inputCardCVV.error')),
+    installments: z.string().trim(),
   });
 }
 

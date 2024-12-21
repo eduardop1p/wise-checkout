@@ -36,11 +36,11 @@ export default function Input({
       <div className='flex flex-col gap-1 w-full'>
         <label className='text-0e0f0c font-semibold text-sm'>{label}</label>
         <div
-          className={`${error ? (focus ? 'shadow-input-error-focus' : 'shadow-input-error border-e74848 ') : focus ? 'shadow-input-focus' : 'shadow-input hover:shadow-input-hover border-c9cbce'} overflow-hidden rounded-[10px] border border-solid w-full transition-all duration-300 flex items-center justify-between gap-4 px-4 py-3`}
+          className={`${error ? (focus ? 'shadow-input-error-focus' : 'shadow-input-error border-e74848 ') : focus ? 'shadow-input-focus' : 'shadow-input hover:shadow-input-hover border-c9cbce'} h-12 overflow-hidden rounded-[10px] border border-solid w-full transition-all duration-300 flex items-center justify-between gap-4 `}
         >
           <input
             type='text'
-            className={`text-base text-0e0f0c w-full`}
+            className={`text-base text-0e0f0c w-full bg-transparent h-full px-4`}
             placeholder={placeholder}
             {...register(name, {
               onBlur() {
@@ -53,13 +53,13 @@ export default function Input({
           {name === 'cardNumber' && (
             <MdOutlineCreditCard
               size={25}
-              className='fill-gray-600 text-gray-600 flex-none'
+              className='fill-gray-600 text-gray-600 flex-none mr-4'
             />
           )}
           {name === 'cardCVV' && (
             <BiCreditCard
               size={25}
-              className='fill-gray-600 text-gray-600 flex-none'
+              className='fill-gray-600 text-gray-600 flex-none mr-4'
             />
           )}
         </div>
